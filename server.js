@@ -54,6 +54,7 @@ app.use(cookieParser());
       }
     
       transporter.sendMail(mail, (err, data) => {
+        console.log(err)
         if (err) {
           res.json({
             msg: 'fail'
