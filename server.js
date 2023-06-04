@@ -23,8 +23,8 @@ app.use(cookieParser());
     var transport = {
       host: 'mx1.sitehost.co.nz',
       auth: {
-        user:process.env.SITEHOST_USERNAME,
-        pass:process.env.SITEHOST_PASSWORD
+        user:'mail@net-work.nz',
+        pass:'WmkQibMRxZW7dgQJutLm'
       }
     }
     
@@ -54,10 +54,11 @@ app.use(cookieParser());
       }
     
       transporter.sendMail(mail, (err, data) => {
-        console.log(err)
+        
         if (err) {
           res.json({
-            msg: 'fail'
+            msg: 'fail',
+            err: err
           })
         } else {
           res.json({
